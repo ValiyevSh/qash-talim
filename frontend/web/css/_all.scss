@@ -1,0 +1,485 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: $font-inter;
+    
+}
+
+
+/* line 4, src/sass/_visully.scss */
+.narratorBox {
+    position: relative;
+    background-color: rgba(87, 235, 123, 0.21);
+}
+
+/* line 9, src/sass/_visully.scss */
+.loading-text {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 14px;
+    right: 10px;
+    top: -30px;
+    background-color: #45a57d !important;
+    border-radius: 50%;
+    -webkit-animation: pulse-shadow 2s infinite;
+    animation: pulse-shadow 2s infinite;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    color: #fff !important;
+}
+
+/* line 26, src/sass/_visully.scss */
+.loading-text:hover {
+    -webkit-animation: none;
+    animation: none;
+    background-color: #45a57d;
+}
+
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F1F6F9;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: $c16;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.plu {
+    text-indent: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+    float: none;
+    line-height: normal;
+    font-size: 1px;
+    vertical-align: baseline;
+    display: inline-block;
+    width: 90px;
+    height: 20px;
+    background: transparent;
+}
+
+.plu>.ifr {
+    position: static;
+    top: 0px;
+    width: 90px;
+    margin: 0px;
+    border-style: none;
+    left: 0px;
+    visibility: visible;
+    height: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: $bgbody;
+    
+    
+    &.image{
+        color: white;
+        .bg-glav{
+            background: none;
+        }
+        img{
+            display: none;
+        }
+        .glavni .slider {
+            display: none;
+        }
+    }
+    &.gray{
+        filter: grayscale(1);
+        color: white;
+        img{
+            display: flex;
+        }
+        .glavni .slider{
+            background: flex;
+        }
+    }
+    &.mode{
+        filter: invert(100%) grayscale(100%);
+        color: white;
+        img, .glavni .slider{
+            filter: invert(1) grayscale(1);
+            display: flex;
+        }
+        .bg-glav{
+            background: flex;
+        }
+    }
+    img{
+        display: flex;
+    }
+    .glavni .slider{
+        background: flex;
+    }
+}
+
+img {
+    object-position: center;
+    object-fit: cover;
+    
+}
+
+.my-container {
+    margin: 0px 80px;
+
+    @include media(1380px) {
+        margin: 0 65px;
+    }
+    @include media(1000px) {
+        margin: 0 40px;
+    }
+    @include media(650px) {
+        margin: 0 20px;
+    }
+}
+
+.glavni-btn {
+    color: $cff;
+    background: $c16;
+    border-radius: 8px;
+    padding: 12px 33px 11px;
+    border: 1px solid transparent;
+    font-weight: 400 !important;
+    @include media(650px){
+        padding: 12px 50px 11px;
+    }
+    transition: 0.3s;
+    cursor: pointer;
+
+
+    &:hover {
+        color: $cff;
+        border: 1px solid #BCBCBC;
+        background: transparent;
+    }
+
+
+    &:active {
+        top: 2px;
+    }
+}
+
+.back-btn {
+    font-weight: 600 !important;
+    color: $c00;
+    border: none;
+    background: $ce2;
+    padding:11px 24px;
+    border-radius: 12px;
+    &:hover{
+      border: none;
+      background: $c16;
+      color: $cff;
+    }
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        margin-left: 12px;
+        transition: 0.3s;
+        width: 13px;
+        height: 9px;
+        path{
+            fill: $c00;
+        }
+    }
+
+
+    &:hover {
+        svg {
+            transform: translateX(5px);
+            path{
+                fill: $cff;
+            }
+        }
+    }
+
+
+    &:active {
+        top: 2px;
+    }
+}
+
+
+
+.txt-18 {
+    @include font18x24xfw400;
+}
+
+.txt-16 {
+    @include font16x23xfw600;
+}
+
+.txt-12 {
+    @include font12x17xfw400;
+}
+
+.txt-14 {
+    @include font14x20xfw400;
+}
+
+.txt-19 {
+    @include font19x23xfw500;
+}
+
+.txt-20 {
+    @include font20x28xfw600;
+}
+
+.txt-22 {
+    @include font22x26xfw700;
+}
+
+.txt-30 {
+    @include font30x39xfw600;
+}
+
+.txt-32 {
+    @include font32x46xfw600;
+}
+
+.txt-24 {
+    @include font24x33xfw600;
+}
+
+.txt-29 {
+    @include font29x33xfw600;
+}
+
+.txt-60 {
+    @include font60x84xfw600;
+}
+
+.txt-42 {
+    @include font42x46xfw600;
+    color: $c04;
+}
+.txt-38 {
+    @include font38x33xfw600;
+    color: $c04;
+}
+
+.swiper-wrapper {
+    padding-bottom: 3px;
+}
+
+
+#mobilep{
+    .navigation-top {
+        padding   : 10px 0;
+        box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.12);
+    }
+}
+
+html.grey {
+
+    p,
+    h1,
+    h2,
+    span,
+    button,
+    img,
+    i {
+        filter: grayscale(100%);
+        box-shadow: none;
+
+    }
+
+    .navigation {
+        filter: grayscale(100%);
+
+        .kategory {
+            filter: grayscale(0) !important;
+        }
+
+    }
+
+    .navbar-top {
+        filter: grayscale(100%);
+
+        .kategory {
+            filter: grayscale(100%) !important;
+        }
+    }
+
+    .footer {
+        filter: grayscale(100%);
+    }
+
+    .footer {
+        filter: grayscale(100%);
+    }
+
+    .mySwiper {
+        filter: grayscale(100%);
+        z-index: 1;
+    }
+
+}
+
+
+
+
+
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 12px 0;
+    width: 100%;
+    border: none;
+
+  }
+  input[type=range]:focus {
+    outline: none;
+
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    background: #C6D0D9;
+    border-radius: 10px;
+    border: 0px solid #000101;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: $cff;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgb(143, 143, 143);
+    -webkit-appearance: none;
+    margin-top: -8.5px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #C6D0D9;
+  }
+  
+
+
+  /* line 491, src/sass/components/_main-header.scss */
+.special-fixed {
+    position: fixed;
+    right: 0;
+    top: 30vh;
+    z-index: 9;
+    width: 40px;
+    -webkit-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.44);
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.44);
+    border-radius: 5px 0 0 5px;
+
+}
+
+/* line 500, src/sass/components/_main-header.scss */
+.special-fixed-container {
+    position: relative;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+/* line 505, src/sass/components/_main-header.scss */
+.special-fixed .special-fixed__btn {
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: $c16;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px 0 0 5px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    outline: none;
+    border: 0;
+}
+
+/* line 520, src/sass/components/_main-header.scss */
+.special-fixed .special-fixed__btn:after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 00px;
+    height: 100%;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    background-color: $c16;
+}
+
+/* line 532, src/sass/components/_main-header.scss */
+.special-fixed-container .special-fixed__btn.active {
+    background-color: $c16;
+}
+
+/* line 536, src/sass/components/_main-header.scss */
+.special-fixed-container .special-fixed__btn.active:after {
+    background-color: $c16;
+    width: 20px;
+}

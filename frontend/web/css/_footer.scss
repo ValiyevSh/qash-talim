@@ -1,0 +1,157 @@
+.footer{
+    width: 100%;
+    padding: 60px 0;
+    background: $footer;
+    .footer-in{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        &-l{
+            width: 30%;
+            .logos {
+                width          : 100%;
+                display        : flex;
+                justify-content: start;
+                align-items    : center;
+                .logo {
+                  width       : 67px;
+                  height      : 67px;
+                  object-fit  : contain;
+                  margin-right: 24px;
+                }
+      
+                .txt-20 {
+                  max-width: 240px;
+                  width: max-content;
+                  color: $cff;
+                  font-weight: 400;
+                }
+              }
+            .blog{
+                padding: 24px;
+                background: $input;
+                border-radius: 12px;
+                margin-top: 24px;
+                .card-blog{
+                    display: flex;
+                    align-items: flex-start;
+                    margin-top: 15px;
+                    svg{
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 10px;
+                    }
+                    .txt-16{
+                        color: $cff;
+                        font-weight: 400;
+                    }
+                }
+            }
+            .bottom-r{
+                width: max-content;
+                margin-top: 20px;
+                .txt-16{
+                    font-weight: 400;
+                    color:$cff;
+                    text-align: start;
+
+                }
+                .images{
+                    display: flex;
+                    margin-top: 14px;
+                    a{
+                        margin-right: 8px;
+                        width: 32px;
+                        height: 32px;
+                        background: #D9D9D9;
+                        border-radius: 5px !important;
+                        overflow: hidden;
+                        &:hover{
+                            img{
+                                transform: scale(0.95);
+                            }
+                        }
+                        img{
+                            transition: .2s;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &-r{
+            width: 33%;
+            .top{
+                width: 100%;
+                height: 440px;
+                border-radius: 12px;
+                filter: grayscale(1);
+            }
+        }
+        .footer-in-form{
+            width: 32%;
+            display: flex;
+            flex-direction: column;
+            .txt-20{
+                font-weight: 400;
+                color: $cff;
+            }
+            .form-footer{
+                width: 100%;
+                .input{
+                    width: 100%;
+                    margin-top: 10px;
+                    background: $input;
+                    border: 2px solid $cff;
+                    box-sizing: border-box;
+                    border-radius: 12px;
+                    padding: 11px 18px;
+                    color: #000;
+                    outline: none;
+                    transition: 0.2s;
+                    color: $cff;
+                    font-weight: 300;
+                    &::placeholder {
+                        color: #BACCD3;
+                        font-weight: 300;
+                        font-size: 14px;
+                        text-transform: capitalize;
+                      }
+                    &:focus{
+                        border: 2px solid $c16;
+                        background: $footer;
+                    }
+                }
+                .label{
+                    margin-top: 16px;
+                    color: $cff;
+                    font-weight: 200;
+                }
+                .glavni-btn{
+                    margin-top: 18px;
+                }
+            }
+        }
+    }
+    .bottom{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 40px;
+        &-l{
+            width: 50%;
+            color: $cff;
+            font-weight: 300;
+        }
+        &-r{
+            width: max-content;
+            color: $cff;
+            font-weight: 300;
+        }
+       
+
+    }
+}
