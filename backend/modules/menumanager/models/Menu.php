@@ -127,7 +127,7 @@ class Menu extends \kartik\tree\models\Tree
         if ($model->url_type === 'page') $menuParams = ['info/index', 'slug' => $model->url_value];
         if ($model->url_type === 'document') $menuParams = ['document/index', 'slug' => $model->url_value];
         if ($model->url_type === 'leader') $menuParams = ['leader/index', 'slug' => $model->url_value];
-        if ($model->url_type === 'news') $menuParams = ['post/index', 'id' => $model->url_value];
+        if ($model->url_type === 'news') $menuParams = ['news/index', 'id' => $model->url_value];
         if ($model->url_type === 'link') return Url::to($model->url_value);
         if ($model->url_type === 'c-action') $menuParams = [$model->url_value];
 

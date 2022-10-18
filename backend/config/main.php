@@ -29,6 +29,12 @@ return [
         'profilemanager' => [
             'class' => 'backend\modules\profilemanager\Module'
         ],
+        'menumanager' => [
+            'class' => 'backend\modules\menumanager\Module'
+        ],
+        'treemanager' =>  [
+            'class' => '\kartik\tree\Module',
+        ],
     ],
     'controllerMap' => [
         'elfinder' => [

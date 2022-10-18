@@ -1,18 +1,9 @@
-
-<div id="animationWindow">
-    <div class="kinetic"></div>
-</div>
-
-<div class="special-fixed abd">
-    <div class="special-fixed-container">
-        <button class="special-fixed__btn" id="speechToggle" title="Голосовой помошник влючён">
-            <i class="fas fa-volume-up"></i>
-        </button>
-    </div>
-</div>
+<?php
 
 
-<!-- //modal-search -->
+
+?>
+
 
 <div class="modal-web modal-search">
     <svg class="back" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,8 +146,3 @@
         </div>
     </div>
 </div>
-
-
-<!-- //menu-left -->
-<div class="bg-p"></div>
-<div class="bg-m"></div>
