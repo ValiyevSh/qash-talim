@@ -1,4 +1,6 @@
 
+<!-- //glavni -->
+
 <div class="glavni">
     <div class="glavni-in">
         <div class="slider">
@@ -976,6 +978,9 @@
     </div>
 </div>
 
-<!-- //footer -->
+
+
+
+
 
 

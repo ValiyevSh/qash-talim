@@ -17,7 +17,11 @@ $(function () {
     $(this).find('.dropdown-menu').first().stop(true, true).slideUp(400);
   });
 
-  
+  $('.dropdown-submenu a.dropdown-item').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
 
 
   $('#gray').click(function () {

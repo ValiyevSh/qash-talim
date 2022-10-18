@@ -399,6 +399,21 @@
   border-radius                    : var(--bs-dropdown-border-radius);
 }
 
+.dropdown-submenu{
+  position: relative;
+  .dropdown-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .menu-in-menu {
+    margin-left: 24px;
+    top: 0;
+    left: 100% !important;
+    margin-top: -1px;
+  }
+} 
+
 
 .bg-p{
   width: 100%;

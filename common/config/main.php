@@ -4,6 +4,7 @@ use yii\caching\FileCache;
 
 return [
     'name' => 'My Application',
+    'language'=>'uz',
     'timeZone' => 'Asia/Tashkent',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -14,6 +15,8 @@ return [
             \yii\widgets\LinkPager::class => \yii\bootstrap4\LinkPager::class,
         ],
     ],
+
+    'vendorPath' => dirname(__DIR__, 2) . '/vendor',
     'modules' => [
         'treemanager' => [
             'class' => '\kartik\tree\Module',
@@ -27,8 +30,6 @@ return [
         ],
 
     ],
-    'vendorPath' => dirname(__DIR__, 2) . '/vendor',
-
     'components' => [
 
         'i18n' => [
