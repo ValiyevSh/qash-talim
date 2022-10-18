@@ -3,8 +3,8 @@
 use yii\caching\FileCache;
 
 return [
-    'name' => 'My Application',
     'language'=>'uz',
+    'name' => 'My Application',
     'timeZone' => 'Asia/Tashkent',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -17,19 +17,6 @@ return [
     ],
 
     'vendorPath' => dirname(__DIR__, 2) . '/vendor',
-    'modules' => [
-        'treemanager' => [
-            'class' => '\kartik\tree\Module',
-        ],
-        'menumanager' => [
-            'class' => 'backend\modules\menumanager\Module'
-        ],
-        'translate-manager' => [
-            'class' => 'wokster\translationmanager\TranslationManager',
-            'languages' => ['uz','en','ru'],
-        ],
-
-    ],
     'components' => [
 
         'i18n' => [

@@ -1,86 +1,14 @@
 
 <!-- //glavni -->
 
-<div class="glavni">
-    <div class="glavni-in">
-        <div class="slider">
-            <div class="slide" style="background-image: url('./img/png/glavni.png');"></div>
-            <div class="slide" style="background-image: url('./img/png/glavni2.jpg');"></div>
-            <div class="slide" style="background-image: url('./img/png/glavni3.png');"></div>
-        </div>
-        <div class="glavni-block">
-            <div class="my-container">
-                <div class="glavni-block-in">
-                    <h1 class="txt-60 ab3">
-                        Qashqadaryo viloyati
-                        Xalq ta’lim boshqarmasi
-                    </h1>
-                    <p class="txt-24 ab4">
-                        Rasmiy veb sayti
-                    </p>
-                    <a href="batafsil.html" class="glavni-btn txt-18 ab4">
-                        Biz haqimizda
-                    </a>
-                    <div class="counter-in line-left">
-                        <div class="card-c" id="counter-box">
-                            <h1 class="txt-30 counter" data-number="58"></h1>
-                            <p class="txt-14">Jami murojatlar</p>
-                        </div>
-                        <div class="card-c" id="counter-box">
-                            <h1 class="txt-30 counter" data-number="58"></h1>
-                            <p class="txt-14">Ko‘rib chiqilgan</p>
-                        </div>
-                        <div class="card-c" id="counter-box">
-                            <h1 class="txt-30 counter" data-number="58"></h1>
-                            <p class="txt-14">Ko‘rib chiqilmoqda</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+<?= $this->render('glavniy'); ?>
+
 
 <!-- //xujjatlar     -->
 
-<div class="work">
-    <div class="my-container">
-        <div class="work-in">
-            <div class="main-content">
-                <a href="#" class="card-c ab">
-                    <div class="img">
-                        <img src="img/png/Book.png" alt="" class="top">
-                    </div>
-                    <h1 class="txt-20">Elektron kutubxona</h1>
-                </a>
-                <a href="#" class="card-c ab2">
-                    <div class="img">
-                        <img src="img/png/Clipboard-Alt.png" alt="" class="top">
-                    </div>
-                    <h1 class="txt-20">Onlayn qabul</h1>
-                </a>
-                <a href="#" class="card-c ab3">
-                    <div class="img">
-                        <img src="img/png/User.png" alt="" class="top">
-                    </div>
-                    <h1 class="txt-20">Bo’sh ish o’rinlari</h1>
-                </a>
-                <a href="#" class="card-c ab4">
-                    <div class="img">
-                        <img src="img/png/Subtract.png" alt="" class="top">
-                    </div>
-                    <h1 class="txt-20">Masofaviy ta’lim</h1>
-                </a>
-                <a href="#" class="card-c ab5">
-                    <div class="img">
-                        <img src="img/png/Book2.png" alt="" class="top">
-                    </div>
-                    <h1 class="txt-20">Elektron kundalik</h1>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+
+<?= $this->render('hujjatlar'); ?>
 
 <!-- //yangiliklar     -->
 

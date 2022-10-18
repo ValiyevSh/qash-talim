@@ -39,8 +39,9 @@ class Link extends \yii\db\ActiveRecord
     {
         return [
             [['title_uz'], 'required'],
-            [['title','icon','email'], 'string', 'max' => 127],
+            [['title','icon',], 'string', 'max' => 127],
             [[ 'status'], 'integer'],
+            [['url'],'string'],
         ];
     }
 
@@ -55,8 +56,9 @@ class Link extends \yii\db\ActiveRecord
         return [
 
             'title'=>'Nomi',
-            'icon'=>'Ikonka',
-            'status'=>'Holati'
+            'icon'=>'Rasm',
+            'url'=>'Silka',
+
         ];
     }
 
