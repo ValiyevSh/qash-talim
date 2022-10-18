@@ -18,11 +18,11 @@ class DefaultController extends Controller
             parent::behaviors(),
             [
                 'access' => [
-                    'class' => AccessControl::className(),
+                    'class' => AccessControl::class,
                     'rules' => [
                         [
                             'allow' => true,
-                            'roles' => ['admin'],
+                            'roles' => ['@'],
                         ],
                     ],
                 ],

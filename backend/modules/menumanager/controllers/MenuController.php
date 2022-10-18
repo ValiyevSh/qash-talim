@@ -29,7 +29,7 @@ class MenuController extends Controller
                     'rules' => [
                         [
                             'allow' => true,
-                            'roles' => ['admin'],
+                            'roles' => ['@'],
                         ],
                     ],
                 ],

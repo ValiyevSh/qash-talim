@@ -43,7 +43,7 @@ class News extends \yii\db\ActiveRecord
             [['content'],'string'],
 
             [['title','img','slug','date'], 'string', 'max' => 127],
-            [[ 'category_id','status'], 'number'],
+            [['category_id','status'], 'number'],
         ];
     }
 

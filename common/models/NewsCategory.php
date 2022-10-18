@@ -21,7 +21,7 @@ class NewsCategory extends \yii\db\ActiveRecord
     {
         return [
             'multilingual' => [
-                'class' => MultilingualBehavior::className(),
+                'class' => MultilingualBehavior::class,
                 'languages' => [
                     'uz' => 'Uzbek',
                     'en' => 'English',

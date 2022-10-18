@@ -84,10 +84,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $logo=Logo::find()->where(['id'=>1]);
-        echo "<pre>";
-        print_r($logo);
-        exit();
         return $this->render('index');
     }
 
