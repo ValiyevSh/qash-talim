@@ -40,7 +40,6 @@ class Link extends \yii\db\ActiveRecord
         return [
             [['title_uz'], 'required'],
             [['title','icon',], 'string', 'max' => 127],
-            [[ 'status'], 'integer'],
             [['url'],'string'],
         ];
     }

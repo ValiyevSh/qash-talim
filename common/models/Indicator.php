@@ -52,7 +52,7 @@ class Indicator extends \yii\db\ActiveRecord
     {
         return [
 
-            'title'=>'Sarlaha',
+            'title'=>'Sarlavha',
             'number'=>'Ko\'rsatkichlar raqamda',
             'icon'=>'Rasm',
         ];

@@ -32,13 +32,13 @@ $this->params['delete'] = Html::a('<i class="fa fa-trash"></i>', ['delete', 'id'
                     'format'=>'raw',
                     'value'=>function($model)
                     {
-                        return "< width='45px' img src='".$model->img."'>";
+                        return "<img width='45px' src='".$model->img."'>";
                     }
                 ],
                 'links',
                 'title',
                   [
-                       'attribute'=>'raw',
+                       'attribute'=>'content',
                       'format'=>'raw',
                   ]
         ],

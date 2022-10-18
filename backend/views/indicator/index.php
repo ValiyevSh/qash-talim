@@ -26,9 +26,16 @@ $this->params['create'] = Html::a('<i class="fa fa-plus"></i>', ['create'], ['cl
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'icon',
-            'number',
             'title',
+            [
+                'attribute'=>'icon',
+                'format'=>'raw',
+                'value'=>function($model)
+                {
+                    return "<img width='45px' src='".$model->icon."'>";
+                }
+            ],
+            'number',
             [
             'class' => ActionColumn::className(),
             ],

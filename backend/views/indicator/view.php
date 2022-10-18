@@ -25,9 +25,18 @@ $this->params['delete'] = Html::a('<i class="fa fa-trash"></i>', ['delete', 'id'
     <div class="card-body">
         <?= DetailView::widget([
         'model' => $model,
+
         'attributes' => [
-                    'id',
-            'icon',
+
+              'title',
+              [
+                  'attribute'=>'icon',
+              'format'=>'raw',
+              'value'=>function($model)
+              {
+                  return "<img width='45px' src='".$model->icon."'>";
+              }
+          ],
             'number',
         ],
         ]) ?>

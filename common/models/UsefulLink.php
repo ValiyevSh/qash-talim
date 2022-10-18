@@ -39,7 +39,7 @@ class UsefulLink extends \yii\db\ActiveRecord
     {
         return [
             [['title_uz'], 'required'],
-            [['content','img','links'], 'string', 'max' => 127],
+            [['content','img','links','title'], 'string', 'max' => 127],
             [[ 'content'], 'string'],
         ];
     }

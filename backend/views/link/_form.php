@@ -29,9 +29,9 @@ use yii\web\JsExpression;
             'multiple'      => false       // возможность выбора нескольких файлов
         ]);
         ?>
-        <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
-        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
+        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
         <div class="row">
             <div class="col d-flex justify-content-end">
                 <?= Html::submitButton('Saqlash', ['class' => 'btn
