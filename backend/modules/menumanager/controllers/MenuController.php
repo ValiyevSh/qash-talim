@@ -8,6 +8,8 @@ use common\models\DocumentCategory;
 use common\models\HeaderMenu;
 use common\models\Info;
 use common\models\LeaderCategory;
+use common\models\News;
+use common\models\NewsCategory;
 use common\models\PostCategory;
 use common\models\UsefulLink;
 use Yii;
@@ -102,10 +104,10 @@ class MenuController extends Controller
 
     private function news()
     {
-        $news = PostCategory::find()->all();
+        $news = NewsCategory::find()->all();
         $options = Html::tag('option', "Sahifani tanlang...");
         foreach ($news as $new) {
-            $options .= Html::tag('option', $new->title, ['value' => $new->slug]);
+            $options .= Html::tag('option', $new->title, ['value' => $new->id]);
         }
 
         return $options;

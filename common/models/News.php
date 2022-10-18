@@ -30,7 +30,6 @@ class News extends \yii\db\ActiveRecord
                 ],
                 'attributes' => [
                     'title','content',
-
                 ]
             ],
         ];
@@ -41,8 +40,8 @@ class News extends \yii\db\ActiveRecord
         return [
             [['title_uz'], 'required'],
             [['content'],'string'],
-
-            [['title','img','slug','date'], 'string', 'max' => 127],
+            [['slug'], 'safe'],
+            [['title','img', 'date'], 'string', 'max' => 127],
             [['category_id','status'], 'number'],
         ];
     }
@@ -66,7 +65,4 @@ class News extends \yii\db\ActiveRecord
 
         ];
     }
-
-
-
 }

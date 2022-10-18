@@ -1,15 +1,23 @@
 <?php
+/**
+ * @var $model \common\models\News
+ */
 
+use common\models\NewsCategory;
+use kartik\datetime\DateTimePicker;
+use kartik\select2\Select2;
+use kartik\switchinput\SwitchInput;
+use mihaildev\elfinder\InputFile;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use gofuroov\multilingual\widgets\ActiveForm;
 use common\components\Modal;
 use mihaildev\ckeditor\CKEditor;
-use kartik\widgets\DateTimePicker;
-use kartik\widgets\SwitchInput;
+
 /* @var $this yii\web\View */
 ?>
 <?php
-$datas=new \common\models\NewsCategory();
+$datas = new NewsCategory();
 
 ?>
 <?php if (Yii::$app->session->hasFlash('message')): ?>
@@ -18,54 +26,58 @@ $datas=new \common\models\NewsCategory();
     </div>
 <?php endif; ?>
 <?php
-$datas=\common\models\NewsCategory::find()->all();
+$datas = NewsCategory::find()->all();
 
 ?>
-<?php $form = ActiveForm::begin() ?>
+<div class="card">
+    <div class="card-body">
+        <?php $form = ActiveForm::begin() ?>
 
-<?= $form->languageSwitcher($model); ?>
+        <?= $form->languageSwitcher($model); ?>
 
-<?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-<?php
-echo $form->field($model, 'img')->widget(\mihaildev\elfinder\InputFile::className(), [
-    'language'      => 'ru',
-    'controller'    => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
-    'filter'        => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
-    'template'      => '<div class="input-group">{input}<span class="input-group-btn">{button}</span></div>',
-    'options'       => ['class' => 'form-control'],
-    'buttonOptions' => ['class' => 'btn btn-default'],
-    'multiple'      => false       // возможность выбора нескольких файлов
-]);
-?>
+        <?= $form->field($model, 'img')->widget(InputFile::className(), [
+            'language' => 'ru',
+            'controller' => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
+            'filter' => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
+            'template' => '<div class="input-group">{input}<span class="input-group-btn">{button}</span></div>',
+            'options' => ['class' => 'form-control'],
+            'buttonOptions' => ['class' => 'btn btn-default'],
+            'multiple' => false       // возможность выбора нескольких файлов
+        ]);
+        ?>
 
-<?php
-echo $form->field($model, 'date')->widget(\kartik\datetime\DateTimePicker::classname(), [
-    'options' => ['placeholder' => 'Vaqtni kiriting'],
-    'pluginOptions' => [
-        'autoclose' => true
-    ]
-]);
+        <?php
+        echo $form->field($model, 'date')->widget(DateTimePicker::classname(), [
+            'options' => ['placeholder' => 'Vaqtni kiriting'],
+            'pluginOptions' => [
+                'autoclose' => true
+            ]
+        ]);
 
-?>
-<?= $form->field($model, 'category_id')->widget(\kartik\select2\Select2::classname(), [
-    'data' => $datas->newscat->title,
-    'options' => ['placeholder' => 'Kategoriyani tanlang ...'],
-    'pluginOptions' => [
-        'allowClear' => true
-    ],
-]); ?>
+        ?>
+        <?= $form->field($model, 'category_id')->widget(Select2::classname(), [
+            'data' => ArrayHelper::map(NewsCategory::find()->all(), 'id', 'title'),
+            'options' => ['placeholder' => 'Kategoriyani tanlang ...'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]); ?>
 
-<?php
-echo $form->field($model, 'content')->widget(CKEditor::className(),[
-    'editorOptions' => [
-        'preset' => 'basic', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
-        'inline' => false, //по умолчанию false
-    ],
-]); ?>
-<?php
-echo $form->field($model, 'status')->widget(\kartik\switchinput\SwitchInput::classname(), []); ?>
+        <?php
+        echo $form->field($model, 'content')->widget(CKEditor::className(), [
+            'editorOptions' => [
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'inline' => false, //по умолчанию false
+            ],
+        ]); ?>
+        <?php
+        echo $form->field($model, 'status')->widget(SwitchInput::classname(), []); ?>
 
-<?= Html::submitButton('Saqlash', ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('Saqlash', ['class' => 'btn btn-primary']) ?>
 
-<?php ActiveForm::end(); ?>
+        <?php ActiveForm::end(); ?>
+
+    </div>
+</div>

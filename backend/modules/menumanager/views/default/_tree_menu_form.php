@@ -6,13 +6,7 @@
  */
 
 
-use common\models\Category;
-use common\models\DocumentCategory;
-use common\models\HeaderMenu;
-use common\models\Info;
-use common\models\LeaderCategory;
-use common\models\PostCategory;
-use common\models\Subcategory;
+use common\models\NewsCategory;
 use common\models\UsefulLink;
 use kartik\form\ActiveForm;
 use kartik\switchinput\SwitchInput;
@@ -21,7 +15,6 @@ use kartik\tree\TreeView;
 use kartik\tree\models\Tree;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use common\models\SourceMessage;
 use yii\web\View;
 
 use mihaildev\ckeditor\CKEditor;
@@ -387,6 +380,7 @@ $icons = is_array($iconsList) ? array_values($iconsList) : $iconsList;
                 'page' => "Sahifalar",
                 'document' => "Hujjatlar",
                 'link' => "Havolalar",
+                'other' => 'Boshqa',
                 'leader' => "Rahbarlar",
                 'news' => "Yangiliklar",
                 'c-action' => "Sayt bo'limlari",
@@ -449,7 +443,7 @@ $icons = is_array($iconsList) ? array_values($iconsList) : $iconsList;
                     elseif ($node->url_type == 'link')
                         echo $form->field($node, 'url_value')->dropdownList(ArrayHelper::map(UsefulLink::find()->andWhere(['status' => UsefulLink::STATUS_INACTIVE])->all(), 'id', 'name'))->label(false);
                     elseif ($node->url_type == 'news')
-                        echo $form->field($node, 'url_value')->dropdownList(ArrayHelper::map(PostCategory::find()->all(), 'slug', 'title'))->label(false);
+                        echo $form->field($node, 'url_value')->dropdownList(ArrayHelper::map(NewsCategory::find()->all(), 'id', 'title'))->label(false);
                     elseif ($node->url_type == 'c-action')
                         echo $form->field($node, 'url_value')->dropdownList(
                             Yii::$app->getModule('menumanager')->sections(), ['prompt' => "Sahifani tanlang ..."])->label(false);
