@@ -10,6 +10,10 @@ use yii\behaviors\AttributeBehavior;
 class News extends \yii\db\ActiveRecord
 {
 
+    const ELON = 1;
+    const YANGI = 2;
+    const DOCUMENT = 3;
+
     use MultilingualLabelsTrait;
 
     public static function tableName()
@@ -43,6 +47,7 @@ class News extends \yii\db\ActiveRecord
             [['slug'], 'safe'],
             [['title','img', 'date'], 'string', 'max' => 127],
             [['category_id','status'], 'number'],
+            ['type_id', 'integer'],
         ];
     }
 
@@ -65,4 +70,26 @@ class News extends \yii\db\ActiveRecord
 
         ];
     }
+
+
+    /**
+     * @return string[]
+     */
+    public static function types()
+    {
+        return [
+            self::ELON => "E'lon",
+            self::YANGI => "Yangiliklar",
+            self::DOCUMENT => "Hujjatlar",
+        ];
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypsLabel()
+    {
+        return $this->types() [$this->type_id];
+    }
+
 }

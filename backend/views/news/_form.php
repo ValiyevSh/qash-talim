@@ -1,8 +1,9 @@
 <?php
 /**
- * @var $model \common\models\News
+ * @var $model News
  */
 
+use common\models\News;
 use common\models\NewsCategory;
 use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
@@ -57,13 +58,28 @@ $datas = NewsCategory::find()->all();
         ]);
 
         ?>
-        <?= $form->field($model, 'category_id')->widget(Select2::classname(), [
-            'data' => ArrayHelper::map(NewsCategory::find()->all(), 'id', 'title'),
-            'options' => ['placeholder' => 'Kategoriyani tanlang ...'],
-            'pluginOptions' => [
-                'allowClear' => true
-            ],
-        ]); ?>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <?= $form->field($model, 'category_id')->widget(Select2::classname(), [
+                    'data' => ArrayHelper::map(NewsCategory::find()->all(), 'id', 'title'),
+                    'options' => ['placeholder' => 'Kategoriyani tanlang ...'],
+                    'pluginOptions' => [
+                        'allowClear' => true
+                    ],
+                ]); ?>
+            </div>
+            <div class="col-sm-6">
+                <?= $form->field($model, 'type_id')->widget(Select2::classname(), [
+                    'data' => News::types(),
+                    'options' => ['placeholder' => 'Kategoriyani tanlang ...'],
+                    'pluginOptions' => [
+                        'allowClear' => true
+                    ],
+                ]); ?>
+            </div>
+        </div>
+
 
         <?php
         echo $form->field($model, 'content')->widget(CKEditor::className(), [
