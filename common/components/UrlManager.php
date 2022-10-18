@@ -9,14 +9,10 @@ use yii\helpers\Url;
 class UrlManager extends \yii\web\UrlManager
 {
 
-
+//    bunda url managerlar yozilga
     public $isMultilingual = true;
 
-    /**
-     * @param array $params
-     * @param bool $addLanguageParam
-     * @return string
-     */
+
     public function createUrl($params = [], $addLanguageParam = true)
     {
         $params = (array)$params;

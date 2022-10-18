@@ -5,8 +5,6 @@ namespace common\models;
 use gofuroov\multilingual\behaviors\MultilingualBehavior;
 use gofuroov\multilingual\db\MultilingualLabelsTrait;
 use gofuroov\multilingual\db\MultilingualQuery;
-use yii\behaviors\AttributeBehavior;
-
 class Logo extends \yii\db\ActiveRecord
 {
 
@@ -43,11 +41,7 @@ class Logo extends \yii\db\ActiveRecord
         ];
     }
 
-    public static function find()
-    {
-        $query=new MultilingualQuery(get_called_class());
-        return $query->multilingual();
-    }
+
 
     public function attributeLabels()
     {
@@ -58,6 +52,12 @@ class Logo extends \yii\db\ActiveRecord
             'tel'=>'Telefon raqam',
             'img'=>'Rasm',
         ];
+    }
+
+    public static function find()
+    {
+        $query = new MultilingualQuery(get_called_class());
+        return $query->multilingual();
     }
 
 }

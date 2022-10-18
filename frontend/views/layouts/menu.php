@@ -5,6 +5,7 @@ use yii\helpers\Url;
 $main_menu = Menu::getMenu('main_menu');
 $menus = $main_menu->activeSubMenus;
 $language = Yii::$app->language;
+
 ?>
 
 <div class="menu-l">
@@ -19,7 +20,7 @@ $language = Yii::$app->language;
             </div>
             <div class="right-in">
                 <p class="txt-14">Ishonch raqami</p>
-                <p class="txt-14 fw5">+998 97 628 28 82</p>
+                <p class="txt-14 fw5"><?=$logo->tel?></p>
             </div>
         </div>
         <svg class="back" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,11 +174,10 @@ $language = Yii::$app->language;
                           fill="black" />
                 </svg>
 
-                <a href="index.html" class="logos">
-                    <img src="img/png/gerb.png" alt="logo" class="logo">
+                <a href="<?=url::home()?>" class="logos">
+                    <img src="<?=$logo->img?>" alt="logo" class="logo">
                     <p class="txt-16">
-                        Qashqadaryo viloyati
-                        Xalq ta’lim boshqarmasi
+                       <?=$logo->name?>
                     </p>
                 </a>
                 <div class="main-page">

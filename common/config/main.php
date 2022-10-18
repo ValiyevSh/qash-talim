@@ -5,7 +5,6 @@ use yii\caching\FileCache;
 return [
     'name' => 'My Application',
     'timeZone' => 'Asia/Tashkent',
-    'language' => 'uz',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',

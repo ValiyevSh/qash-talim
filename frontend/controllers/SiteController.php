@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Logo;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -59,6 +60,7 @@ class SiteController extends Controller
      parent::init();
      }
 
+
     /**
      * {@inheritdoc}
      */
@@ -82,6 +84,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $logo=Logo::find()->where(['id'=>1]);
+        echo "<pre>";
+        print_r($logo);
+        exit();
         return $this->render('index');
     }
 
@@ -265,11 +271,15 @@ class SiteController extends Controller
     }
   public function actionMenu()
   {
-      return $this->render('menu');
+
+      return $this->render('menu',[
+          'logo'=>$logo
+      ]);
   }
 
   public function actionTop()
   {
+
       return $this->render('top');
   }
 }
